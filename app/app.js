@@ -15,6 +15,7 @@
     $routeProvider
     .when("/", {
         templateUrl : "/app/modules/main/mainView.html",
+        controller : "mainController"
     })
     .when("/main", {
         templateUrl : "/app/modules/main/mainView.html",
@@ -35,6 +36,10 @@
     .when("/delivery", {
         templateUrl : "/app/modules/delivery/deliveryView.html",
         controller : "deliveryController"
+    })
+    .otherwise({
+        templateUrl : "/app/modules/main/mainView.html",
+        controller : "mainController"
     });
     $locationProvider.html5Mode(true);
   
