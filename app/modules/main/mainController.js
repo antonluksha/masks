@@ -4,10 +4,8 @@
 
         $(document).ready(function () {
 
-            var owl = $('.owl-carousel');
-
-            // Carousel initialization
-            owl.owlCarousel({
+            var mainSlider = $('#mainSlider');
+            mainSlider.owlCarousel({
                 items: 1,
                 nav: true,
                 loop: true,

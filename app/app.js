@@ -5,9 +5,10 @@
         "navigationApp",
         "mainApp",
         "aboutApp",
-        "shopApp",
+        "productListApp",
+        "productDetailsApp",
         "contactsApp",
-        "deliveryApp"
+        "deliveryApp",
     ]);
     
     
@@ -26,9 +27,9 @@
         templateUrl : "/app/modules/about/aboutView.html",
         controller : "aboutController"
     })
-    .when("/shop", {
-        templateUrl : "/app/modules/shop/shopView.html",
-        controller : "shopController"
+    .when("/products", {
+        templateUrl : "/app/modules/productList/productListView.html",
+        controller : "productListController"
     })
     .when("/contacts", {
         templateUrl : "/app/modules/contacts/contactsView.html",
@@ -37,6 +38,10 @@
     .when("/delivery", {
         templateUrl : "/app/modules/delivery/deliveryView.html",
         controller : "deliveryController"
+    })    
+    .when("/products/masks/id/:maskId", {
+        templateUrl : "/app/modules/productDetails/productDetailsView.html",
+        controller : "productDetailsController"
     })
     .otherwise({
         templateUrl : "/app/modules/main/mainView.html",

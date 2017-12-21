@@ -1,0 +1,24 @@
+<section class="container">
+    <h2>Маски для лица</h2>
+    <p>
+        <span>Поиск</span>
+        <input ng-model="priceSearch" type="text" class="form-control">
+    </p>
+
+    <div class="priceList">
+        <div class="product" ng-repeat="product in priceList | filter:priceSearch">
+            <a href="/products/masks/id/{{product.id}}" ng-click="productDetails(product.id)">
+                <img src="{{product.img}}" alt="{{product.name}}">
+                <h4>{{product.name}}</h4>
+                <p>{{product.advantage}}</p>
+                </a>
+                <hr>
+                <p>{{product.price| currency}}</p>
+                <p>
+                    <button class="btn btn-outline-primary" type="button">Добавить в корзину</button>    
+                </p>
+            
+        </div>
+<div ng-hide="priceList" class="alert alert-danger">При загрузке данных произошла ошибка {{requestStatus}} {{requestStatusText}}</div>
+    </div>
+</section>
