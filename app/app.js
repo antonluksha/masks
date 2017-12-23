@@ -9,6 +9,7 @@
         "productDetailsApp",
         "contactsApp",
         "deliveryApp",
+        "priceListService"
     ]);
     
     

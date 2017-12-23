@@ -7,7 +7,7 @@
 
     <div class="priceList">
         <div class="product" ng-repeat="product in priceList | filter:priceSearch">
-            <a href="/products/masks/id/{{product.id}}" ng-click="productDetails(product.id)">
+            <a href="/products/masks/id/{{product.id}}">
                 <img src="{{product.img}}" alt="{{product.name}}">
                 <h4>{{product.name}}</h4>
                 <p>{{product.advantage}}</p>
