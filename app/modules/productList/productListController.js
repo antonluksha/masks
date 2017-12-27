@@ -1,6 +1,6 @@
 (function () {
     var productListApp = angular.module('productListApp', []);
-    productListApp.controller('productListController', function ($scope, priceListService) {
+    productListApp.controller('productListController', function ($scope, priceListService, cartService) {
 
 
         priceListService.getData()

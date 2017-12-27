@@ -3,7 +3,6 @@
     navigationApp.controller('navigationController', function($scope) {
  
     
-    
 });
    
 })()

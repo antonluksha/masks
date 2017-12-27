@@ -14,9 +14,10 @@
                 </a>
                 <hr>
                 <p>{{product.price| currency}}</p>
-                <p>
-                    <button class="btn btn-outline-primary" type="button">Добавить в корзину</button>    
-                </p>
+                <form ng-controller="cartController">
+                    <input ng-model="productNum" type="number" min="0" max="99" placeholder="0" pattern="^[1-9]\d*$" required>
+                    <button class="btn btn-outline-primary" type="button" ng-click="addToCart(product.id)">Добавить в корзину {{ product.name }}</button>  
+                </form>
             
         </div>
 <div ng-hide="priceList" class="alert alert-danger">При загрузке данных произошла ошибка {{requestStatus}} {{requestStatusText}}</div>

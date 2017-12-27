@@ -5,5 +5,8 @@
    <p>{{ productView.description }}</p>
     <hr>
     <p>{{productView.price| currency}}</p>
-   <button class="btn btn-outline-primary" type="button">Добавить в корзину</button>
+    <p ng-controller="cartController">
+   <input ng-model="productNum" type="number" min="0" max="99" placeholder="0" pattern="^[1-9]\d*$" required>
+   <button class="btn btn-outline-primary" type="button" ng-click="addToCart(productView.id)">Добавить в корзину {{ productView.name }}</button>
+   </p>
 </div>

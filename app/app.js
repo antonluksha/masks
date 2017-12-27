@@ -9,7 +9,9 @@
         "productDetailsApp",
         "contactsApp",
         "deliveryApp",
-        "priceListService"
+        "cartApp",
+        "priceListService",
+        "cartService"
     ]);
     
     
@@ -19,6 +21,10 @@
     .when("/", {
         templateUrl : "/app/modules/main/mainView.html",
         controller : "mainController"
+    })
+    .when("/cart", {
+        templateUrl : "/app/modules/cart/cartView.html",
+        controller : "cartController"
     })
     .when("/main", {
         templateUrl : "/app/modules/main/mainView.html",
@@ -55,7 +61,7 @@
 pageApp.controller('pageController', ['$route', '$routeParams', '$location', function($scope, $route, $routeParams, $location) {
       this.$route = $route;
       this.$location = $location;
-      this.$routeParams = $routeParams; 
+      this.$routeParams = $routeParams;
 }]);
 
 })()
