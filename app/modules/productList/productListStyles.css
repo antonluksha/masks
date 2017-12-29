@@ -1,9 +1,8 @@
 .product img {
-    height: 250px
+    height: 150px
 }
 .product {
     width: 250px;
     display: inline-block;
-    background: #dee5a9;
     margin: 10px;
 }

@@ -1,6 +1,18 @@
-<div class="container">
-   <img src="{{ productView.img }}" alt="">
+
+<div class="container row">
+ 
+ 
+  <div class="priceListView col-sm-3">
+      <h5><a href="/products">Список товаров:</a></h5>
+          <ul ng-repeat="product in priceList">
+              <li><a href="/products/masks/id/{{product.id}}">{{product.name}}</a></li>
+          </ul>
+      
+  </div>
+  
+  <div class="productView col-sm-9">
    <h2> {{ productView.name }} </h2>
+   <img src="{{ productView.img }}" alt="{{ productView.name }}">
    <p>{{ productView.advantage }}</p>
    <p>{{ productView.description }}</p>
     <hr>
@@ -9,4 +21,10 @@
    <input ng-model="productNum" type="number" min="0" max="99" placeholder="0" pattern="^[1-9]\d*$" required>
    <button class="btn btn-outline-primary" type="button" ng-click="addToCart(productView.id)">Добавить в корзину {{ productView.name }}</button>
    </p>
+  </div>
+  
+  
+  
+  
 </div>
+

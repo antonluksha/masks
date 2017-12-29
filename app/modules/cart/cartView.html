@@ -1,20 +1,20 @@
-<div class="container">
+<div class="container table-responsive-sm">
     <h2>Корзина</h2>
     <button ng-click="clearCart()"> clear storage</button>
-     <table class="table table-bordered">
-            <thead class="thead-inverse">
+     <table class="table table-striped table-hover">
+            <thead class="thead-dark">
                 <tr>
-                    <th>№</th>
-                    <th>Изображение</th>
-                    <th>Наименование</th>
-                    <th>Описание</th>
-                    <th>Количество</th>
-                    <th>Цена</th>
-                    <th>Удалить</th>
+                    <th scope="col">№</th>
+                    <th scope="col">Изображение</th>
+                    <th scope="col">Наименование</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Количество</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col">Удалить</th>
                 </tr>
             </thead>
             <tfoot>
-                <tr> 
+                <tr class="table-success"> 
                    <th colspan="5"></th>
                     <th>Итого: </th>
                     <th> {{ cartPrice | currency }}</th>
@@ -22,12 +22,13 @@
             </tfoot>
             <tbody>
                 <tr ng-repeat="product in cartList">
-                    <td>{{ $index + 1 }}</td>
+                    <td scope="row">{{ $index + 1 }}</td>
                     <td><img src="{{product.img}}" alt="{{ product.name }}"></td>
                     <td>{{ product.name }}</td>
                     <td>{{ product.advantage }}</td>
                     <td>
-                        <input ng-model="productNum" type="number" min="1" max="99" ng-change="changeCart(product.id, productNum)" value="{{ product.number }}" pattern="^[1-9]\d*$">    
+                        <input ng-model="productNum" type="number" min="1" max="99" ng-change="changeCart(product.id, productNum)" value="{{ product.number }}" pattern="^[1-9]\d*$">
+                        <span>x {{product.price | currency }}</span>
                     </td>
                     <td>{{ product.number * product.price | currency }}</td>
                     <td>
@@ -40,7 +41,7 @@
     
     <style>
     img {
-    height: 100px;
+    height: 64px;
         }
     </style>
     

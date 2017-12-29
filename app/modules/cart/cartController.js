@@ -35,10 +35,11 @@
         };
 
         $scope.addToCart = function (id) {
-            $scope.cartList = cartService.readCart();
+            var sum = Number($scope.productNum); 
+                if (sum > 0) {
+                    $scope.cartList = cartService.readCart();
             priceListService.getProductById(id)
                 .then(function (cartProductToAdd) {
-                    var sum = $scope.productNum;
                     var indexInCartList = findIndexById($scope.cartList, id);
                     if (indexInCartList >= 0) {
                         $scope.cartList[indexInCartList].number = $scope.cartList[indexInCartList].number + sum;
@@ -49,7 +50,11 @@
                     cartService.pushCart($scope.cartList);
                     numGoods();
                     cartPriceSum();
-                });
+                 });
+                    } else {
+                        alert('Введите количество');
+                    }
+               
 
         };
 
